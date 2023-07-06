@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ContactItem, ButtonDelete } from './Contact.styled';
 
-const Contact = ({ contact: { name, number, id }, onClick }) => {
+const Contact = ({ contact: { name, number, id }, onDelete }) => {
   return (
     <ContactItem>
       <p>
@@ -11,7 +11,7 @@ const Contact = ({ contact: { name, number, id }, onClick }) => {
       <ButtonDelete
         type="button"
         onClick={() => {
-          onClick(id);
+          onDelete(id);
         }}
       >
         Delete
@@ -26,6 +26,7 @@ Contact.propTypes = {
   contact: PropTypes.shape({
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
-  onClick: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };

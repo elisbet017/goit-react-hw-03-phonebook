@@ -4,7 +4,7 @@ import Contact from '../Contact';
 
 export default class ContactList extends Component {
   render() {
-    const { contacts, onClick } = this.props;
+    const { contacts, onDelete } = this.props;
     return (
       <>
         {contacts.length === 0 ? (
@@ -17,8 +17,8 @@ export default class ContactList extends Component {
                   <Contact
                     key={contact.id}
                     contact={contact}
-                    onClick={id => {
-                      onClick(id);
+                    onDelete={id => {
+                      onDelete(id);
                     }}
                   />
                 );
@@ -37,5 +37,5 @@ ContactList.propTypes = {
       id: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-  onClick: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
