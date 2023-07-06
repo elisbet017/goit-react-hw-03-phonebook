@@ -21,7 +21,7 @@ export default class ContactList extends Component {
                       onDelete(id);
                     }}
                   />
-                );
+                )
               })}
             </ul>
           </>
